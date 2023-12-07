@@ -18,11 +18,9 @@ from models.barcodes import Barcode
 
 @pytest.fixture(scope="module")
 def test_db():
-    # test_database_url = os.getenv("TEST_DATABASE_URL", "sqlite:///./tests/test_tiqets.db")
-    test_database_url = os.getenv("TEST_DATABASE_URL")
+    test_database_url = os.getenv("TEST_DATABASE_URL", "sqlite:///./tests/test_tiqets.db")
 
     engine = create_engine(test_database_url)
-    # engine = create_engine("sqlite:///./tests/test_tiqets.db")
     Base.metadata.create_all(engine)
     SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
     session = SessionLocal()

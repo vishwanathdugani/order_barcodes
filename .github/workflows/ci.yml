@@ -16,7 +16,7 @@ jobs:
 
     - name: Set Environment Variables
       run: |
-        echo "TEST_DATABASE_URL=sqlite:///./tests/test_tiqets.db" >> $GITHUB_ENV
+        echo "DATABASE_URL=sqlite:///./tests/test_tiqets.db" >> $GITHUB_ENV
         echo "PYTHONPATH=${{ github.workspace }}:$PYTHONPATH" >> $GITHUB_ENV
 
     - name: Install dependencies
