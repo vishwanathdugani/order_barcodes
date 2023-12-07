@@ -4,7 +4,6 @@ on: [push, pull_request]
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -15,13 +14,15 @@ jobs:
       with:
         python-version: '3.11'
 
+    - name: Set Environment Variables
+      run: |
+        echo "DATABASE_URL=sqlite:///./tests/test_tiqets.db" >> $GITHUB_ENV
+        echo "PYTHONPATH=${{ github.workspace }}:$PYTHONPATH" >> $GITHUB_ENV
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-
-    - name: Set PYTHONPATH
-      run: echo "PYTHONPATH=${{ github.workspace }}:$PYTHONPATH" >> $GITHUB_ENV
 
     - name: Run tests and generate report
       run: |
