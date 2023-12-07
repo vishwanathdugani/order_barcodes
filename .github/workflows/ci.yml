@@ -21,13 +21,13 @@ jobs:
 
     - name: Run tests and generate report
       run: |
-        pytest tests.py --html=report.html # Adjust the command to generate your HTML report
+        pytest tests/tests.py --html=tests/report.html
 
     - name: Upload test report
       uses: actions/upload-artifact@v2
       with:
         name: Test Report
-        path: report.html
+        path: tests/report.html
 
     - name: Fail if tests fail
       if: failure()
