@@ -1,0 +1,12 @@
+/.pytest_cache/
+/venv/
+/tests/assets/
+.idea/
+__pycache__/
+/database/__pycache__/
+/models/__pycache__/
+/tests/__pycache__/
+/tests/test_tiqets.db
+/tiqets.db
+/utils/__pycache__/
+/__pycache__/

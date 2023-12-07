@@ -1,0 +1,4 @@
+sqlalchemy-orm==1.2.10
+pydantic==2.5.2
+pytest==7.4.3
+pytest-html==4.1.1
