@@ -45,6 +45,13 @@ Tiqets Script is a Python-based application designed for managing ticket orders 
        ```bash
        export PYTHONPATH=$(pwd):$PYTHONPATH
        ```
+       
+   - Set the DATABASE URLS:
+     - Ensure the DATABASE_URL and  TEST_DATABASE_URL:
+       ```bash
+       export DATABASE_URL="sqlite:///./tiqets.db"
+       export TEST_DATABASE_URL="sqlite:///./tests/test_tiqets.db"
+       ```
 
 ### Usage
 
